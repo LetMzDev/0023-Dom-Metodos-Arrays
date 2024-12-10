@@ -7,7 +7,9 @@ async function get_Buscar_Livros_Da_API ()
 {
 	const resposta = await fetch ( end_Point_Da_API );
 	livros = await resposta.json();
-	console.table ( livros );
+	// console.table ( livros );
 
-	Exibir_Livros_Na_Tela ( livros );
+	let livros_Com_Desconto = Aplicar_Desconto ( livros );
+
+	Exibir_Livros_Na_Tela ( livros_Com_Desconto ); // Exibir na tela todos os livros já com descontos
 }
