@@ -1,8 +1,10 @@
 const elemento_Para_Inserir_Livros = document.getElementById ( 'livros' );
+const elemento_Valor_Total_Disponivel = document.getElementById ( 'valor_total_livros_disponiveis' )
 
 function Exibir_Livros_Na_Tela ( lista_de_livros )
 {
 	elemento_Para_Inserir_Livros.innerHTML = '';
+	elemento_Valor_Total_Disponivel.innerHTML = ''
 
 	lista_de_livros.forEach ( livro =>
 	{
