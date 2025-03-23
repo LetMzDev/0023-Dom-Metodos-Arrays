@@ -11,7 +11,7 @@ function Filtrar_Livros ()
 	const elemento_Btn = document.getElementById ( this.id );
 	const categoria = elemento_Btn.value;
 
-	let livros_Filtrados = livros.filter ( livro => livro.categoria == categoria );
+	let livros_Filtrados = categoria == 'disponivel' ? livros.filter ( livro => livro.quantidade > 0 ) : livros.filter ( livro => livro.categoria == categoria );
 	// console.table ( livros_Filtrados );
 	Exibir_Livros_Na_Tela ( livros_Filtrados );
 }
