@@ -12,5 +12,6 @@ function Filtrar_Livros ()
 	const categoria = elemento_Btn.value;
 
 	let livros_Filtrados = livros.filter ( livro => livro.categoria == categoria );
-	console.table ( livros_Filtrados );
+	// console.table ( livros_Filtrados );
+	Exibir_Livros_Na_Tela ( livros_Filtrados );
 }

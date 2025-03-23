@@ -2,6 +2,8 @@ const elemento_Para_Inserir_Livros = document.getElementById ( 'livros' );
 
 function Exibir_Livros_Na_Tela ( lista_de_livros )
 {
+	elemento_Para_Inserir_Livros.innerHTML = '';
+
 	lista_de_livros.forEach ( livro =>
 	{
 		elemento_Para_Inserir_Livros.innerHTML +=
