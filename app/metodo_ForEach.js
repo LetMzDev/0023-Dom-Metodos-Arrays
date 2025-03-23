@@ -6,10 +6,12 @@ function Exibir_Livros_Na_Tela ( lista_de_livros )
 
 	lista_de_livros.forEach ( livro =>
 	{
+		let disponibilidade = Verificar_Disponibilidade_Do_Livro ( livro )
+
 		elemento_Para_Inserir_Livros.innerHTML +=
 		`
 			<div class="livro">
-				<img class="livro__imagens" src="${livro.imagem}"
+				<img class="${disponibilidade}" src="${livro.imagem}"
 					alt = "${livro.alt}" />
 				<h2 class="livro__titulo">
 					${livro.titulo}
@@ -22,4 +24,13 @@ function Exibir_Livros_Na_Tela ( lista_de_livros )
 			</div>
 		`
 	})
+}
+
+function  Verificar_Disponibilidade_Do_Livro ( livro )
+{
+	if ( livro.quantidade > 0 )
+		return 'livro__imagens'
+
+	else
+		return 'livro__imagens indisponivel'
 }
